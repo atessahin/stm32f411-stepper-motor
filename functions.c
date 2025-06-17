@@ -26,7 +26,7 @@ void systemClockConfig()
    								 
     RCC->CR |= (1 << 24);  // PLLON
   while(!(RCC->CR & (1 << 25)));  // WAIT FOR PLLRDY		
-   	RCC->CFGR&=~(15U<<0);//NO AHB DIVISION 84 MHZ
+   	RCC->CFGR&=~(15U<<4);//NO AHB DIVISION 84 MHZ
    	RCC->CFGR|=(4U<<10);//APB1 /2 =42 MHZ (MAX ALREADY)
    	RCC->CFGR&=~(4U<<13);//APB2 /1=84MHZ NO DIVISION
    
